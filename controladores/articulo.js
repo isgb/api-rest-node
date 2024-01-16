@@ -1,3 +1,5 @@
+const validator = require('validator')
+
 const prueba = (req, res) => {
 
     return res.status(200).json({
@@ -22,6 +24,21 @@ const crear = (req,res) => {
     let parametros = req.body;
 
     // Validar datos
+    try {
+        let validar_titulo = !validator.isEmpty(parametros.titulo) &&
+                              validator.isLength(parametros.titulo, {min:5, max:10});
+        let validar_contenido = !validator.isEmpty(parametros.titulo);
+
+        if(!validar_titulo || !validar_contenido){
+            throw new Error("Nose ha validado la información !!")
+        }
+
+    } catch (error) {
+        return res.status(400).json({
+            status: "error",
+            mensaje: "Faltan datos por enviar",
+        })
+    }
 
     // Crear el objeto a guardar
 
