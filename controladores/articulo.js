@@ -18,6 +18,18 @@ const curso = (req,res) => {
 
 const crear = (req,res) => {
 
+    // Recoger parametros por post a guardar
+
+    // Validar datos
+
+    // Crear el objeto a guardar
+
+    // Asignar valores a objeto basado en el modelo (manual o automatico
+    
+    // Guardar el articulo en la base de datos
+
+    // Devolder resultado
+
     return res.status(200).json({
         mensaje: "Acción de guardar"
     })
