@@ -1,6 +1,6 @@
 const {Schema, model} = require("mongoose");
 
-const ArticuloSchema = Scehma({
+const ArticuloSchema = Schema({
     titulo:{
         type: String,
         require: true

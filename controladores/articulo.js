@@ -8,74 +8,80 @@ const prueba = (req, res) => {
     })
 }
 
-const curso = (req,res) => {
+const curso = (req, res) => {
 
-        console.log("Se ha ejecutado el endpoint probando")
-    
-        return res.status(200).send({
-            curso: "Master en React",
-            autor: "Victor Robles WEB",
-            url: "victorroblesweb.es/master-react"
-        })
+    console.log("Se ha ejecutado el endpoint probando")
+
+    return res.status(200).send({
+        curso: "Master en React",
+        autor: "Victor Robles WEB",
+        url: "victorroblesweb.es/master-react"
+    })
 }
 
-const crear = (req,res) => {
+const crear = async (req, res) => {
 
-    // Recoger parametros por post a guardar
     let parametros = req.body;
 
-    // Validar datos
-    try {
+        // Validar datos
         let validar_titulo = !validator.isEmpty(parametros.titulo) &&
-                              validator.isLength(parametros.titulo, {min:5, max:undefined});
+            validator.isLength(parametros.titulo, { min: 5, max: undefined });
         let validar_contenido = !validator.isEmpty(parametros.titulo);
 
-        if(!validar_titulo || !validar_contenido){
+        if (!validar_titulo || !validar_contenido) {
             throw new Error("Nose ha validado la información !!")
         }
 
-    } catch (error) {
-        return res.status(400).json({
-            status: "error",
-            mensaje: "Faltan datos por enviar",
-        })
-    }
+        // Crear el objeto a guardar
+        const articulo = new Articulo(parametros);
 
-    // Crear el objeto a guardar
-    const articulo = new Articulo(parametros);
+        // Guardar el artículo en la base de datos
+        const articuloGuardado = await articulo.save();
 
-    // Asignar valores a objeto basado en el modelo (manual o automatico
-    //articulo.titulo = parametros.titulo;
-
-    // Guardar el articulo en la base de datos
-    articulo.save((error, articuloGuardado) => {
-
-        if(error || !articulo){
-            return res.status(400).json({
-                status: "error",
-                mensaje: "No se ha guardado el artículo",
-            })
-        }
-
-        //Devolver resultado
+        // Devolver resultado
         return res.status(200).json({
             status: "success",
             articulo: articuloGuardado,
-            mensaje: "Articulo creado con exito!!",
-        })
+            mensaje: "Artículo creado con éxito",
+        });
 
-    })
+    // try {
+    //     // Recoger parametros por post a guardar
+    //     let parametros = req.body;
 
-    // Devolder resultado
+    //     // Validar datos
+    //     let validar_titulo = !validator.isEmpty(parametros.titulo) &&
+    //         validator.isLength(parametros.titulo, { min: 5, max: undefined });
+    //     let validar_contenido = !validator.isEmpty(parametros.titulo);
 
-    return res.status(200).json({
-        mensaje: "Acción de guardar",
-        parametros
-    })
+    //     if (!validar_titulo || !validar_contenido) {
+    //         throw new Error("Nose ha validado la información !!")
+    //     }
+
+    //     // Crear el objeto a guardar
+    //     const articulo = new Articulo(parametros);
+
+    //     // Guardar el artículo en la base de datos
+    //     const articuloGuardado = await articulo.save();
+
+    //     // Devolver resultado
+    //     return res.status(200).json({
+    //         status: "success",
+    //         articulo: articuloGuardado,
+    //         mensaje: "Artículo creado con éxito",
+    //     });
+    // } catch (error) {
+    //     return res.status(400).json({
+    //         status: "error",
+    //         mensaje: "Faltan datos por enviar o los datos no son válidos",
+    //         error: error
+    //     });
+    // }
+
 }
 
 module.exports = {
     prueba,
     curso,
-    crear
+    crear,
 }
