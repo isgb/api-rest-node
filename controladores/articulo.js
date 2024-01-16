@@ -26,7 +26,7 @@ const crear = (req,res) => {
     // Validar datos
     try {
         let validar_titulo = !validator.isEmpty(parametros.titulo) &&
-                              validator.isLength(parametros.titulo, {min:5, max:10});
+                              validator.isLength(parametros.titulo, {min:5, max:undefined});
         let validar_contenido = !validator.isEmpty(parametros.titulo);
 
         if(!validar_titulo || !validar_contenido){
