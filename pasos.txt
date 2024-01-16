@@ -1,0 +1,7 @@
+npm init
+npm i express --save
+npm i mongoose --save
+npm i multer --save //subir archivos
+npm i validator --save //validar datos
+npm i cors --save
+npm i nodemon --save
