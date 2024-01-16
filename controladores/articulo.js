@@ -61,7 +61,7 @@ const crear = (req,res) => {
         return res.status(200).json({
             status: "success",
             articulo: articuloGuardado,
-            mensaje: "Articulo creado con exito!!
+            mensaje: "Articulo creado con exito!!",
         })
 
     })
