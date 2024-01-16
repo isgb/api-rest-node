@@ -5,6 +5,18 @@ const prueba = (req, res) => {
     })
 }
 
+const curso = (req,res) => {
+
+        console.log("Se ha ejecutado el endpoint probando")
+    
+        return res.status(200).send({
+            curso: "Master en React",
+            autor: "Victor Robles WEB",
+            url: "victorroblesweb.es/master-react"
+        })
+}
+
 module.exports = {
-    prueba
+    prueba,
+    curso
 }
