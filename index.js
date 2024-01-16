@@ -19,6 +19,27 @@ app.use(cors());
 app.use(express.json())
 
 // Crear rutas
+app.get("/probando",(req,res) => {
+
+    console.log("Se ha ejecutado el endpoint probando")
+
+    return res.status(200).send({
+        curso: "Master en React",
+        autor: "Victor Robles WEB",
+        url: "victorroblesweb.es/master-react"
+    })
+
+})
+
+app.get("/",(req,res) => {
+
+    console.log("Se ha ejecutado el endpoint probando")
+
+    return res.status(200).send(
+        "<h1>Empezando a crear una api rest con node</h1>"
+    )
+
+})
 
 //Crear servidor y escuchar peticiones http
 app.listen(puerto, () => {
