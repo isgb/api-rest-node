@@ -19,6 +19,8 @@ app.use(cors());
 app.use(express.json())
 
 //RUTAS
+const rutas_articulo = require("./rutas/articulo")
+app.use("/api", rutas_articulo)
 
 //Rutas de prueba
 app.get("/probando",(req,res) => {
