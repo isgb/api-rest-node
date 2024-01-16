@@ -19,6 +19,7 @@ const curso = (req,res) => {
 const crear = (req,res) => {
 
     // Recoger parametros por post a guardar
+    let parametros = req.body;
 
     // Validar datos
 
@@ -31,7 +32,8 @@ const crear = (req,res) => {
     // Devolder resultado
 
     return res.status(200).json({
-        mensaje: "Acción de guardar"
+        mensaje: "Acción de guardar",
+        parametros
     })
 }
 
