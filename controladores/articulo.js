@@ -55,8 +55,12 @@ const crear = async (req, res) => {
 
 const listar = (req, res) => {
      
-    let consulta = Articulo.find({}).then((articulos) => {
-        
+    let consulta = Articulo.find({});
+
+    consulta.limit(3);
+    
+    consulta.sort({ fecha: -1 }).then((articulos) => {
+
         return res.status(200).send({
             status: "success",
             articulos

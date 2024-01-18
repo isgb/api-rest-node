@@ -11,7 +11,7 @@ const ArticuloSchema = new Schema({
     },
     fecha:{
         type: Date,
-        require: Date.now
+        default: Date.now
     },
     imagen: {
         type: String,
