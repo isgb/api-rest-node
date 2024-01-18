@@ -57,12 +57,16 @@ const listar = (req, res) => {
      
     let consulta = Articulo.find({});
 
-    consulta.limit(3);
+    if(req.params.ultimos){
+        consulta.limit(3);
+    }
     
     consulta.sort({ fecha: -1 }).then((articulos) => {
 
         return res.status(200).send({
             status: "success",
+            // parametro: req.params.ultimos,
+            contador: articulos.length,
             articulos
         })
     }).catch((error) => {
