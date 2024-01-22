@@ -1,5 +1,7 @@
-const {validarArticulo} = require("../helpers/validar")
-const Articulo = require('../modelos/Articulo')
+const fs = require("fs");
+const { validarArticulo } = require("../helpers/validar")
+const Articulo = require('../modelos/Articulo');
+const { error } = require("console");
 
 const prueba = (req, res) => {
 
@@ -23,45 +25,45 @@ const crear = async (req, res) => {
 
     let parametros = req.body;
 
-        //Validar datos
-        try{
-            validarArticulo(parametros)
-        } catch (error) {
-            return res.status(500).json({
-                status: "error",
-                mensaje: "Faltan datos por enviar"
-            });
-        }
+    //Validar datos
+    try {
+        validarArticulo(parametros)
+    } catch (error) {
+        return res.status(500).json({
+            status: "error",
+            mensaje: "Faltan datos por enviar"
+        });
+    }
 
-        // Crear el objeto a guardar
-        console.log(parametros)
-        const articulo = new Articulo(parametros);
+    // Crear el objeto a guardar
+    console.log(parametros)
+    const articulo = new Articulo(parametros);
 
-        await articulo
+    await articulo
         .save()
         .then((articuloGuardado) => {
-          // Devolver resultado
-          return res.status(200).json({
-            status: "Success",
-            articulo: articuloGuardado,
-          });
+            // Devolver resultado
+            return res.status(200).json({
+                status: "Success",
+                articulo: articuloGuardado,
+            });
         })
         .catch((error) => {
-          return res.status(400).json({
-            status: "Error",
-            mensaje: "No se ha guardado el artículo",
-          });
+            return res.status(400).json({
+                status: "Error",
+                mensaje: "No se ha guardado el artículo",
+            });
         });
 }
 
 const listar = (req, res) => {
-     
+
     let consulta = Articulo.find({});
 
-    if(req.params.ultimos){
+    if (req.params.ultimos) {
         consulta.limit(3);
     }
-    
+
     consulta.sort({ fecha: -1 }).then((articulos) => {
 
         return res.status(200).send({
@@ -94,18 +96,18 @@ const uno = (req, res) => {
     });
 };
 
-const borrar = (req,res) => {
+const borrar = (req, res) => {
 
     let articulo_id = req.params.id;
 
-    Articulo.findOneAndDelete({_id: articulo_id}).then((articuloBorrado) => {
+    Articulo.findOneAndDelete({ _id: articulo_id }).then((articuloBorrado) => {
         return res.status(200).json({
             status: "success",
             articulo: articuloBorrado,
             mensaje: "Metodo de borrar"
         })
     }).catch((error) => {
-        if(error){
+        if (error) {
             return res.status(500).json({
                 status: "error",
                 mensaje: "Error al borrar el artículo"
@@ -114,7 +116,7 @@ const borrar = (req,res) => {
     });
 }
 
-const editar = (req,res) =>{
+const editar = (req, res) => {
     //Recoger id articulo a editar
     let articuloId = req.params.id;
 
@@ -122,7 +124,7 @@ const editar = (req,res) =>{
     let parametros = req.body;
 
     //Validar datos
-    try{
+    try {
         validarArticulo(parametros)
     } catch (error) {
         return res.status(500).json({
@@ -132,8 +134,8 @@ const editar = (req,res) =>{
     }
 
     //Buscar y actualizar el artículo
-    Articulo.findOneAndUpdate({_id: articuloId}, req.body,{new:true}).then((articuloActualizado) => {
-        
+    Articulo.findOneAndUpdate({ _id: articuloId }, req.body, { new: true }).then((articuloActualizado) => {
+
         //Devolver respuestas
         return res.status(200).json({
             status: "success",
@@ -141,7 +143,7 @@ const editar = (req,res) =>{
             mensaje: "Metodo de editar"
         })
     }).catch((error) => {
-        if(error){
+        if (error) {
             return res.status(500).json({
                 status: "error",
                 mensaje: "Error al editar el artículo"
@@ -150,7 +152,7 @@ const editar = (req,res) =>{
     });
 }
 
-const subir = (req,res) =>{
+const subir = (req, res) => {
 
     // Configurar multer
 
@@ -160,20 +162,35 @@ const subir = (req,res) =>{
     // Nombre del archivo
     let archivo = req.file.originalname;
 
-    // Comprobar extension correcta
+    // Extension del archivo
     let archivo_split = archivo.split("\.");
-    let archivo_extension = archivo_split[1];
+    let extension = archivo_split[1];
 
-    // Si todo va buen, actualizar el articulo
+    // Comprobar extension correcta
+    if (extension != "png" && extension != "jpg" &&
+        extension != "jpeg" && extension != "gif") {
 
-    // Devolver respuesta
+        //Borrar archivo y dar una respuesta
+        fs.unlink(req.file.path, (error) => {
+            return res.status(400).json({
+                status: "error",
+                mensaje: "Imagen invalida"
+            })
+        })
+    } else {
+
+        // Si todo va buen, actualizar el articulo
+
+        // Devolver respuesta
 
 
-    return res.status(200).json({
-        status: "success",
-        archivo_split,
-        files: req.file
-    })
+        return res.status(200).json({
+            status: "success",
+            archivo_split,
+            files: req.file
+        })
+    }
+
 }
 
 module.exports = {
