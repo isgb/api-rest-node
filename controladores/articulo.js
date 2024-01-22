@@ -150,7 +150,31 @@ const editar = (req,res) =>{
     });
 }
 
+const subir = (req,res) =>{
 
+    // Configurar multer
+
+    // Recoger el fichero de imagen subido
+    console.log(req.file)
+
+    // Nombre del archivo
+    let archivo = req.file.originalname;
+
+    // Comprobar extension correcta
+    let archivo_split = archivo.split("\.");
+    let archivo_extension = archivo_split[1];
+
+    // Si todo va buen, actualizar el articulo
+
+    // Devolver respuesta
+
+
+    return res.status(200).json({
+        status: "success",
+        archivo_split,
+        files: req.file
+    })
+}
 
 module.exports = {
     prueba,
@@ -159,5 +183,6 @@ module.exports = {
     listar,
     uno,
     borrar,
-    editar
+    editar,
+    subir
 }
