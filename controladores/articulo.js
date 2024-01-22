@@ -157,7 +157,13 @@ const subir = (req, res) => {
     // Configurar multer
 
     // Recoger el fichero de imagen subido
-    console.log(req.file)
+    // console.log(req.file)
+    if(!req.file && !req.files){
+        return res.status(404).json({
+            status: "error",
+            mensaje: "Petición invalida"
+        })
+    }
 
     // Nombre del archivo
     let archivo = req.file.originalname;
