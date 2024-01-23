@@ -1,0 +1,54 @@
+[{
+  "_id": {
+    "$oid": "65a999756853caf7a40ddef6"
+  },
+  "titulo": "COMO CREAR UN SITIO WEB ACTUALIZADO 567",
+  "contenido": "CONTENIDO: COMO CREAR UN SITIO WEB ACTUALIZADO",
+  "imagen": "deafult.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a99d4535db8aa39d2a251b"
+  },
+  "titulo": "Master en CSS",
+  "contenido": "Contenido de el articulo como hacer un sitio wen completo",
+  "imagen": "deafult.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a99e47b861190538757071"
+  },
+  "titulo": "Master en HTML",
+  "contenido": "Contenido de el articulo como hacer un sitio wen completo",
+  "imagen": "deafult.png",
+  "fecha": {
+    "$date": "2024-01-18T21:55:19.444Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a99e73b861190538757074"
+  },
+  "titulo": "Master en PHP",
+  "contenido": "Contenido de el articulo como hacer un sitio wen completo",
+  "imagen": "deafult.png",
+  "fecha": {
+    "$date": "2024-01-18T21:56:03.551Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65aaf21a07ebf1e70728c5dc"
+  },
+  "titulo": "Master en Angular",
+  "contenido": "Contenido de el articulo como hacer un sitio wen completo",
+  "imagen": "deafult.png",
+  "fecha": {
+    "$date": "2024-01-19T22:05:14.704Z"
+  },
+  "__v": 0
+}]
