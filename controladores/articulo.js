@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 const { validarArticulo } = require("../helpers/validar")
 const Articulo = require('../modelos/Articulo');
 const { error } = require("console");
@@ -185,18 +186,50 @@ const subir = (req, res) => {
         })
     } else {
 
-        // Si todo va buen, actualizar el articulo
+         //Recoger id articulo a editar
+    let articuloId = req.params.id;
 
-        // Devolver respuesta
 
+    //Buscar y actualizar el artículo
+    Articulo.findOneAndUpdate({ _id: articuloId }, {imagen: req.file.filename}, { new: true }).then((articuloActualizado) => {
 
+        //Devolver respuestas
         return res.status(200).json({
             status: "success",
-            archivo_split,
-            files: req.file
+            articulo: articuloActualizado,
+            fichero:  req.file
         })
+    }).catch((error) => {
+        if (error) {
+            return res.status(500).json({
+                status: "error",
+                mensaje: "Error al editar el artículo"
+            });
+        }
+    });
+
     }
 
+}
+
+const imagen = (req,res) => {
+    let fichero = req.params.fichero;
+    let ruta_fisica = "./imagenes/articulos/"+fichero;
+
+    // GET http....api/imagen/nombre_del_fichero.jpg
+    fs.access(ruta_fisica, (existe) => {
+        if(existe){
+            return res.sendFile(path.resolve(ruta_fisica))
+        }else{
+            return res.status(404).json({
+                status: "error",
+                mensaje: "La imagen no existe",
+                existe,
+                fichero,
+                ruta_fisica
+            });
+        }
+    })
 }
 
 module.exports = {
@@ -207,5 +240,6 @@ module.exports = {
     uno,
     borrar,
     editar,
-    subir
+    subir,
+    imagen
 }
