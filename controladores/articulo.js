@@ -237,47 +237,45 @@ const buscador = (req, res) =>{
     // Sacar el string de busqueda
     let busqueda = req.params.busqueda;
 
-    // Find OR
-    Articulo.find({ "$or" : [
+    // // Find OR
+    // Articulo.find({ "$or" : [
+    //     {"titulo": {"$regex": busqueda, "$options" : "i"}},
+    //     {"contenido": {"$regex": busqueda, "$options" : "i"}},
+    // ]})
+    // .sort({fecha: -1})
+    // .exec((error, articulosEncontrados) => {
+    //     if(error || !articulosEncontrados)
+    //     {
+    //         return res.status(404).json({
+    //             status: "error",
+    //             mensaje: "No se ha encontrado artículos"
+    //         });
+    //     }
+
+    //     return res.status(200).json({
+    //         status: "success",
+    //         articulos: articulosEncontrados
+    //     })
+    // });
+
+    let consulta = Articulo.find({ "$or" : [
         {"titulo": {"$regex": busqueda, "$options" : "i"}},
         {"contenido": {"$regex": busqueda, "$options" : "i"}},
-    ]})
-    .sort({fecha: -1})
-    .exec((error, articulosEncontrados) => {
-        if(error || !articulosEncontrados)
-        {
-            return res.status(404).json({
-                status: "error",
-                mensaje: "No se ha encontrado artículos"
-            });
-        }
+    ]});
+
+    consulta.sort({ fecha: -1 }).then((articulosEncontrados) => {
 
         return res.status(200).json({
             status: "success",
             articulos: articulosEncontrados
         })
+
+    }).catch((error) => {
+       return res.status(404).json({
+                status: "error",
+                mensaje: "No se ha encontrado artículos"
+            });
     });
-
-    // let consulta = Articulo.find({});
-
-    // if (req.params.ultimos) {
-    //     consulta.limit(3);
-    // }
-
-    // consulta.sort({ fecha: -1 }).then((articulos) => {
-
-    //     return res.status(200).send({
-    //         status: "success",
-    //         // parametro: req.params.ultimos,
-    //         contador: articulos.length,
-    //         articulos
-    //     })
-    // }).catch((error) => {
-    //     return res.status(404).json({
-    //         status: "error",
-    //         mensaje: "No se han encontrado artículos"
-    //     });
-    // });
     
 }
 
