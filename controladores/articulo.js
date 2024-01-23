@@ -257,11 +257,28 @@ const buscador = (req, res) =>{
             articulos: articulosEncontrados
         })
     });
-    // Orden
 
-    // Ejecutar consulta
+    // let consulta = Articulo.find({});
 
-    // Devolver resultado
+    // if (req.params.ultimos) {
+    //     consulta.limit(3);
+    // }
+
+    // consulta.sort({ fecha: -1 }).then((articulos) => {
+
+    //     return res.status(200).send({
+    //         status: "success",
+    //         // parametro: req.params.ultimos,
+    //         contador: articulos.length,
+    //         articulos
+    //     })
+    // }).catch((error) => {
+    //     return res.status(404).json({
+    //         status: "error",
+    //         mensaje: "No se han encontrado artículos"
+    //     });
+    // });
+    
 }
 
 module.exports = {
