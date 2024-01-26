@@ -217,17 +217,17 @@ const imagen = (req,res) => {
     let ruta_fisica = "./imagenes/articulos/"+fichero;
 
     // GET http....api/imagen/nombre_del_fichero.jpg
-    fs.stat(ruta_fisica, (existe) => {
-        if(existe){
-            return res.sendFile(path.resolve(ruta_fisica))
+    fs.access(ruta_fisica, (error) => {
+        if(!error){
+          return res.sendFile(path.resolve(ruta_fisica));
         }else{
-            return res.status(404).json({
-                status: "error",
-                mensaje: "La imagen no existe",
-                existe,
-                fichero,
-                ruta_fisica
-            });
+          return res.status(400).json({
+            status: "Error",
+            mensaje: "La imagen no existe",
+            error,
+            fichero,
+            ruta_fisica
+          });
         }
     })
 }
