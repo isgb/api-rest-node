@@ -217,7 +217,7 @@ const imagen = (req,res) => {
     let ruta_fisica = "./imagenes/articulos/"+fichero;
 
     // GET http....api/imagen/nombre_del_fichero.jpg
-    fs.access(ruta_fisica, (existe) => {
+    fs.stat(ruta_fisica, (existe) => {
         if(existe){
             return res.sendFile(path.resolve(ruta_fisica))
         }else{
