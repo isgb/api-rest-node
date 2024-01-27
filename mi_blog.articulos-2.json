@@ -1,0 +1,451 @@
+[{
+  "_id": {
+    "$oid": "65a999756853caf7a40ddef6"
+  },
+  "titulo": "COMO CREAR UN SITIO WEB ACTUALIZADO 567",
+  "contenido": "CONTENIDO: COMO CREAR UN SITIO WEB ACTUALIZADO",
+  "imagen": "articulo1705961323761evidencia_test.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a99d4535db8aa39d2a251b"
+  },
+  "titulo": "Master en CSS",
+  "contenido": "Contenido de el articulo como hacer un sitio wen completo",
+  "imagen": "articulo1705961323761evidencia_test.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a99e47b861190538757071"
+  },
+  "titulo": "Master en HTML",
+  "contenido": "Contenido de el articulo como hacer un sitio wen completo",
+  "imagen": "articulo1705961323761evidencia_test.jpg",
+  "fecha": {
+    "$date": "2024-01-18T21:55:19.444Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a99e73b861190538757074"
+  },
+  "titulo": "Master en PHP",
+  "contenido": "Contenido de el articulo como hacer un sitio wen completo",
+  "imagen": "articulo1705961323761evidencia_test.jpg",
+  "fecha": {
+    "$date": "2024-01-18T21:56:03.551Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65aaf21a07ebf1e70728c5dc"
+  },
+  "titulo": "Master en Angular 3",
+  "contenido": "Master en Angular 3",
+  "imagen": "articulo1706398770485238374203_1114643082401574_5202135472556711785_n.jpg",
+  "fecha": {
+    "$date": "2024-01-19T22:05:14.704Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b345d713abdef2a7385352"
+  },
+  "titulo": "Master en React Native",
+  "contenido": "texto de prueba",
+  "imagen": "deafult.png",
+  "fecha": {
+    "$date": "2024-01-26T05:40:39.298Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b346ce13abdef2a7385355"
+  },
+  "titulo": "Titulo Test",
+  "contenido": "Contenido test",
+  "imagen": "deafult.png",
+  "fecha": {
+    "$date": "2024-01-26T05:44:46.345Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b3472b13abdef2a7385357"
+  },
+  "titulo": "Titulo Test",
+  "contenido": "textoo test",
+  "imagen": "deafult.png",
+  "fecha": {
+    "$date": "2024-01-26T05:46:19.929Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b3473813abdef2a7385359"
+  },
+  "titulo": "Titulo Test",
+  "contenido": "textoo test",
+  "imagen": "deafult.png",
+  "fecha": {
+    "$date": "2024-01-26T05:46:32.326Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b3477d13abdef2a738535b"
+  },
+  "titulo": "Titulo Test",
+  "contenido": "texto test",
+  "imagen": "deafult.png",
+  "fecha": {
+    "$date": "2024-01-26T05:47:41.674Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b55a84896f5a690518afda"
+  },
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-01-26T23:11:33.662Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_76c5c4161a424b58bbffd955c4a6591b",
+      "parentId": "wrk_0de334ed676a48f5bf0e8361ee83367d",
+      "modified": {
+        "$numberLong": "1705615594175"
+      },
+      "created": {
+        "$numberLong": "1705614315117"
+      },
+      "url": "http://localhost:3900/api/articulos",
+      "name": "New Request",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": {
+        "$numberLong": "-1705614315117"
+      },
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_0de334ed676a48f5bf0e8361ee83367d",
+      "parentId": null,
+      "modified": {
+        "$numberLong": "1705446687982"
+      },
+      "created": {
+        "$numberLong": "1705446687982"
+      },
+      "name": "Blog",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_987205b702ad4335a7d273ee245a6d18",
+      "parentId": "wrk_0de334ed676a48f5bf0e8361ee83367d",
+      "modified": {
+        "$numberLong": "1705616086930"
+      },
+      "created": {
+        "$numberLong": "1705616083829"
+      },
+      "url": "http://localhost:3900/api/articulo/65a99d4535db8aa39d2a251b",
+      "name": "New Request",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": {
+        "$numberLong": "-1705530519059"
+      },
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_39226b423c9244dca3221050a49c0a8a",
+      "parentId": "wrk_0de334ed676a48f5bf0e8361ee83367d",
+      "modified": {
+        "$numberLong": "1706306447853"
+      },
+      "created": {
+        "$numberLong": "1706305942997"
+      },
+      "url": "http://localhost:3900/api/imagen/articulo1706304751267tacos.jpg",
+      "name": "ver imagen",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705509570044.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_eb8021d84574486f81dda0846570ee47",
+      "parentId": "wrk_0de334ed676a48f5bf0e8361ee83367d",
+      "modified": {
+        "$numberLong": "1705698484608"
+      },
+      "created": {
+        "$numberLong": "1705697574704"
+      },
+      "url": "http://localhost:3900/api/articulo/65a9991f6853caf7a40ddef4",
+      "name": "delete",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": {
+        "$numberLong": "-1705488621030"
+      },
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_268e1d6c2a9e42839380a870139896a7",
+      "parentId": "wrk_0de334ed676a48f5bf0e8361ee83367d",
+      "modified": {
+        "$numberLong": "1705701567605"
+      },
+      "created": {
+        "$numberLong": "1705700656440"
+      },
+      "url": "http://localhost:3900/api/articulo/65a999756853caf7a40ddef6",
+      "name": "editar",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/x-www-form-urlencoded",
+        "params": [
+          {
+            "id": "pair_c95f575a2e984720ae2bd94c06eb800e",
+            "name": "titulo",
+            "value": "COMO CREAR UN SITIO WEB ACTUALIZADO 567",
+            "description": "",
+            "disabled": false
+          },
+          {
+            "id": "pair_d341805e4e004323bf6453747c428852",
+            "name": "contenido",
+            "value": "CONTENIDO: COMO CREAR UN SITIO WEB ACTUALIZADO",
+            "description": ""
+          }
+        ]
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705467672015.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_dece1e21da544ae5a18cf48a39ff20ec",
+      "parentId": "wrk_0de334ed676a48f5bf0e8361ee83367d",
+      "modified": {
+        "$numberLong": "1705961601666"
+      },
+      "created": {
+        "$numberLong": "1705956982633"
+      },
+      "url": "http://localhost:3900/api/subir-imagen/65a999756853caf7a40ddef6",
+      "name": "subir imagen",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": [
+          {
+            "id": "pair_c95f575a2e984720ae2bd94c06eb800e",
+            "name": "file0",
+            "value": "",
+            "description": "",
+            "disabled": false,
+            "type": "file",
+            "multiline": true,
+            "fileName": "C:\\Users\\Zentro2\\OneDrive\\Imágenes\\tomate.jpg"
+          }
+        ]
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1705457197508.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_317dc910c6654a279fdb88c676ba352c",
+      "parentId": "wrk_0de334ed676a48f5bf0e8361ee83367d",
+      "modified": {
+        "$numberLong": "1705701912889"
+      },
+      "created": {
+        "$numberLong": "1705446723001"
+      },
+      "url": "http://localhost:3900/api/crear",
+      "name": "New Request",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/x-www-form-urlencoded",
+        "params": [
+          {
+            "name": "titulo",
+            "value": "Master en Angular",
+            "id": "pair_132e8e9474a0435381c8aea0501588b3",
+            "disabled": false
+          },
+          {
+            "id": "pair_ab640ff91f184756a3f776681f138cef",
+            "name": "contenido",
+            "value": "Contenido de el articulo como hacer un sitio wen completo",
+            "description": ""
+          }
+        ]
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded",
+          "id": "pair_1578ee57cbfd4152895cbb58a5b13983"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": {
+        "$numberLong": "-1705446723001"
+      },
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_36f6e98aa01d953833587f9d67a8feefd106b083",
+      "parentId": "wrk_0de334ed676a48f5bf0e8361ee83367d",
+      "modified": {
+        "$numberLong": "1705446687992"
+      },
+      "created": {
+        "$numberLong": "1705446687992"
+      },
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": {
+        "$numberLong": "1705446687992"
+      },
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_36f6e98aa01d953833587f9d67a8feefd106b083",
+      "parentId": "wrk_0de334ed676a48f5bf0e8361ee83367d",
+      "modified": {
+        "$numberLong": "1705446687995"
+      },
+      "created": {
+        "$numberLong": "1705446687995"
+      },
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    }
+  ]
+}]
